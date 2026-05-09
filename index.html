@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Kumar | Research & Statistics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #2e2a36;
-            --text-main: #ececec;
-            --text-muted: #b0b0b0;
-            --accent: #4a90e2;
-            --border: #403a4d;
-            --card-bg: rgba(45, 40, 55, 0.6);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Harsh Kumar | Research & Statistics</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfa  ir+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+      <style>
+          :root {
+              --bg-color: #2e2a36;
+              --text-main: #ececec;
+              --text-muted: #b0b0b0;
+              --accent: #4a90e2;
+              --border: #403a4d;
+              --card-bg: rgba(45, 40, 55, 0.6);
+          }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
           body {
               font-family: 'Inter', sans-serif;
               background-color: var(--bg-color);
@@ -59,7 +59,7 @@
           }
           .social-links {
               display: flex;
-              flex-direction: row; /* Back to single row */
+              flex-direction: row;
               justify-content: flex-end;
               gap: 20px;
           }
@@ -74,7 +74,7 @@
               white-space: nowrap;
           }
           .social-links a:hover { color: var(--accent); border-color: var(--accent); }
-          /* New Landscape Image Section */
+
           .hero-image-container {
               width: 100%;
               margin-bottom: 4rem;
@@ -91,6 +91,7 @@
               transition: filter 0.5s ease;
           }
           .hero-image:hover { filter: grayscale(0%); }
+
           section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
           h2 {
               font-family: 'Playfair Display', serif;
@@ -139,7 +140,7 @@
               background: var(--accent);
               border-radius: 50%;
           }
-          .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:  var(--accent); font-weight: 600; }
+          .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:    var(--accent); font-weight: 600; }
           .timeline-content h4 { font-size: 1.1rem; margin: 0.5rem 0; }
           .timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
           .beyond-grid {
@@ -156,7 +157,7 @@
               display: flex;
               flex-direction: column;
           }
-          .beyond-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;  color: var(--text-main); }
+          .beyond-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;    color: var(--text-main); }
           .beyond-list {
               list-style: none;
               padding: 0;
@@ -174,7 +175,7 @@
               left: 0;
               color: var(--accent);
           }
-          footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;  font-size: 0.8rem; color: #777; }
+          footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;    font-size: 0.8rem; color: #777; }
           @media (max-width: 768px) {
               .header-content { flex-direction: column; align-items: flex-start; gap: 2rem; }
               .social-links { justify-content: flex-start; }
@@ -189,47 +190,45 @@
               <div class="header-content">
                   <div class="brand">
                       <h1>Harsh Kumar</h1>
-                      <p class="tagline">Graduate Researcher in Decision Sciences at IIM  Udaipur</p>
+                      <p class="tagline">Graduate Researcher in Decision Sciences at IIM   Udaipur</p>
                   </div>
                   <div class="social-links">
                       <a href="https://github.com/joeyMoriarty" target="_blank">GitHub</a>
-                      <a href="https://www.linkedin.com/in/harsh-kumar-b19a72206/"  target="_blank">LinkedIn</a>
+                      <a href="https://www.linkedin.com/in/harsh-kumar-b19a72206/"    target="_blank">LinkedIn</a>
                       <a href="mailto:harsh.2024phd@iimu.ac.in">Email</a>
                   </div>
               </div>
           </div>
       </header>
       <div class="container">
-          <!-- Image Placeholder Section -->
           <div class="hero-image-container">
-              <!-- REPLACE 'images/hero-image.jpg' with your actual path or URL -->
-              <img  src="https://via.placeholder.com/1200x400?text=Your+Mathematical+Landscape+Here"  alt="Research Inspiration" class="hero-image">
+              <!-- CORRECTED PATH TO YOUR GITHUB FOLDER -->
+              <img src="images/hero-image.jpg" alt="Research Inspiration" class="hero-image">
           </div>
           <section id="research">
               <h2>Research Interests</h2>
-
               <div class="interest-group">
                   <div class="interest-category">Quantitative Finance</div>
                   <div class="project-card">
-                      Strengthening ICA for Theoretical Independence of Time Series Signals with Applications in  Cryptocurrency Return and Portfolio Optimization.
+                      Strengthening ICA for Theoretical Independence of Time Series Signals   with Applications in Cryptocurrency Return and Portfolio Optimization.
                   </div>
                   <div class="project-card">
-		      Independent Component Analysis for Cryptocurrency Portfolio Optimization:   A fastICA, HSIC and Infomax Approach.	
+                      Independent Component Analysis for Cryptocurrency Portfolio Optimization:   A fastICA, HSIC and Infomax Approach.
                   </div>
               </div>
               <div class="interest-group">
                   <div class="interest-category">Generative AI & LLMs</div>
                   <div class="project-card">
-                      Applications of RAG based LLMs for STEM Question Answer Generation: A Study on Cloud (watsonx) vs. Local (Ollama) Infrastructure  and Fine-Tuning Methodologies.
+                      Applications of RAG based LLMs for STEM Question Answer Generation: A   Study on Cloud (watsonx) vs. Local (Ollama) Infrastructure and Fine-Tuning Methodologies.
                   </div>
               </div>
               <div class="interest-group">
                   <div class="interest-category">Econometrics</div>
                   <div class="project-card">
-                      Online Education on Sort-Term and Long-Term Individual Academic and Career Performance: A PSM-DID approach, During the Pandemic  (InCIS 2025 and IMRC 2025 Conference Presentation)
+                      Online Education on Sort-Term and Long-Term Individual Academic and   Career Performance: A PSM-DID approach, During the Pandemic (InCIS 2025 and IMRC 2025   Conference Presentation)
                   </div>
                   <div class="project-card">
-                      Qualitative Response Model for Household Level Debt, for the Indian  Subcontinent using PCA based Probit Regression
+                      Qualitative Response Model for Household Level Debt, for the Indian   Subcontinent using PCA based Probit Regression
                   </div>
               </div>
           </section>
@@ -254,7 +253,7 @@
                       <div class="timeline-date">2018 — 2023</div>
                       <div class="timeline-content">
                           <h4>BS-MS Degree</h4>
-                          <p>Mathematics & Statistics, IISER Kolkata (Minor in Computational &  Data Sciences).</p>
+                          <p>Mathematics & Statistics, IISER Kolkata (Minor in Computational &   Data Sciences).</p>
                       </div>
                   </div>
               </div>
@@ -282,7 +281,7 @@
           </section>
       </div>
       <footer>
-          &copy; <script>document.write(new Date().getFullYear())</script> Harsh Kumar. Built  by Hermes.
+          &copy; <script>document.write(new Date().getFullYear())</script> Harsh Kumar. Built   by Hermes.
       </footer>
       <script>
           const canvas = document.getElementById('canvas-bg');
@@ -295,9 +294,7 @@
           window.addEventListener('resize', resize);
           resize();
           class Particle {
-              constructor() {
-                  this.reset();
-              }
+              constructor() { this.reset(); }
               reset() {
                   this.x = Math.random() * canvas.width;
                   this.y = Math.random() * canvas.height;
@@ -315,33 +312,28 @@
                   ctx.beginPath();
                   ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
                   ctx.fillStyle = '#4a90e2';
-                  ctx.fill();
-              }
-          }
-          for(let i = 0; i < 90; i++) particles.push(new Particle());
-          function animate() {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-              ctx.strokeStyle = 'rgba(74, 144, 226, 0.15)';
-              ctx.lineWidth = 0.7;
-              for(let i = 0; i < particles.length; i++) {
-                  for(let j = i + 1; j < particles.length; j++) {
-                      let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y -  particles[j].y);
-                      if(dist < 160) {
-                          ctx.beginPath();
-                          ctx.moveTo(particles[i].x, particles[i].y);
-                          ctx.lineTo(particles[j].x, particles[j].y);
-                          ctx.stroke();
-                      }
-                  }
-              }
-              particles.forEach(p => {
-                  p.update();
-                  p.draw();
-              });
-              requestAnimationFrame(animate);
-          }
-          animate();
-      </script>
-  </body>
-  </html>
+            }
+        }
+        for(let i = 0; i < 90; i++) particles.push(new Particle());
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(74, 144, 226, 0.15)';
+            ctx.lineWidth = 0.7;
+            for(let i = 0; i < particles.length; i++) {
+                for(let j = i + 1; j < particles.length; j++) {
+                    let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                    if(dist < 160) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
