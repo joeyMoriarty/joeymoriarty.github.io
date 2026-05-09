@@ -1,0 +1,332 @@
+─ html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kumar | Research & Statistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfdfc;
+              --text-main: #1a1a1a;
+              --text-muted: #555555;
+              --accent: #4a90e2;
+              --border: #e0e0e0;
+              --card-bg: rgba(255, 255, 255, 0.7);
+          }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          body {
+              font-family: 'Inter', sans-serif;
+              background-color: var(--bg-color);
+              color: var(--text-main);
+              line-height: 1.6;
+              overflow-x: hidden;
+          }
+          /* The Background Simulation */
+          #canvas-bg {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              filter: opacity(0.4);
+          }
+          .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+          /* Header Section */
+          header {
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+          }
+          h1 {
+              font-family: 'Playfair Display', serif;
+              font-size: 3.5rem;
+              font-weight: 600;
+              margin-bottom: 1rem;
+              letter-spacing: -1px;
+          }
+          .tagline {
+              font-size: 1.2rem;
+              color: var(--text-muted);
+              max-width: 600px;
+              font-weight: 300;
+              font-style: italic;
+          }
+          .social-links {
+              margin-top: 2rem;
+              display: flex;
+              gap: 20px;
+          }
+          .social-links a {
+              text-decoration: none;
+              color: var(--text-main);
+              font-family: 'Fira Code', monospace;
+              font-size: 0.9rem;
+              border-bottom: 1px solid var(--border);
+              transition: all 0.3s ease;
+              padding-bottom: 2px;
+          }
+          .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+          /* Section Styling */
+          section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+          h2 {
+              font-family: 'Playfair Display', serif;
+              font-size: 2rem;
+              margin-bottom: 3rem;
+              text-align: center;
+              position: relative;
+          }
+          h2::after {
+              content: '';
+              display: block;
+              width: 40px;
+              height: 2px;
+              background: var(--accent);
+              margin: 15px auto;
+          }
+          /* Research Cards */
+          .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  gap: 2rem; }
+          .card {
+              background: var(--card-bg);
+              padding: 2rem;
+              border: 1px solid var(--border);
+              border-radius: 4px;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              backdrop-filter: blur(5px);
+          }
+          .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);  }
+          .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 1rem; font-size:  1.3rem; }
+          .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+          .badge {
+              font-family: 'Fira Code', monospace;
+              font-size: 0.7rem;
+              padding: 3px 8px;
+              border: 1px solid var(--accent);
+              color: var(--accent);
+              border-radius: 3px;
+              text-transform: uppercase;
+          }
+          /* Timeline */
+          .timeline { position: relative; padding-left: 2rem; }
+          .timeline::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              width: 2px;
+              background: var(--border);
+          }
+          .timeline-item { position: relative; margin-bottom: 3rem; }
+          .timeline-item::before {
+              content: '';
+              position: absolute;
+              left: -2.4rem;
+              top: 0.5rem;
+              width: 10px;
+              height: 10px;
+              background: var(--accent);
+              border-radius: 50%;
+          }
+          .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:  var(--accent); font-weight: 600; }
+          .timeline-content h4 { font-size: 1.1rem; margin: 0.5rem 0; }
+          .timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
+          /* Toolkit Table */
+          .toolkit-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 2rem;
+              text-align: center;
+          }
+          .toolkit-cat h4 { font-family: 'Fira Code', monospace; font-size: 0.8rem;  text-transform: uppercase; margin-bottom: 1rem; color: var(--accent); }
+          .toolkit-list { list-style: none; font-size: 0.9rem; color: var(--text-muted); }
+          .toolkit-list li { margin-bottom: 5px; }
+          /* Footer */
+          footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;  font-size: 0.8rem; color: #aaa; }
+          @media (max-width: 768px) {
+              h1 { font-size: 2.5rem; }
+              .container { padding: 0 1.5rem; }
+          }
+      </style>
+  </head>
+  <body>
+      <canvas id="canvas-bg"></canvas>
+      <header>
+          <div class="container">
+              <h1>Harsh Kumar</h1>
+              <p class="tagline">Graduate Researcher in Decision Sciences | Bridging Stochastic   Theory & Artificial Intelligence.</p>
+              <div class="social-links">
+                  <a href="https://github.com/joeyMoriarty" target="_blank">GitHub</a>
+                  <a href="#" target="_blank">LinkedIn</a>
+                  <a href="mailto:hk18ms093@gmail.com">Email</a>
+              </div>
+          </div>
+      </header>
+      <div class="container">
+          <section id="research">
+              <h2>Research Pillars</h2>
+              <div class="grid">
+                  <div class="card">
+                      <span class="badge">Generative AI</span>
+                      <h3>LLM Infrastructure</h3>
+                      <p>Comparative study on Cloud (watsonx) vs Local (Ollama) infrastructure  for STEM QA and fine-tuning methodologies.</p>
+                  </div>
+                  <div class="card">
+                      <span class="badge">Quant Finance</span>
+                      <h3>Stochastic Signals</h3>
+                      <p>Research on theoretical independence of time series signals using  fastICA and HSIC for cryptocurrency portfolio optimization.</p>
+                  </div>
+                  <div class="card">
+                      <span class="badge">Econometrics</span>
+                      <h3>Household Debt Models</h3>
+                      <p>Developing qualitative response models for debt prediction in the  Indian subcontinent using SVM and Probit models.</p>
+                  </div>
+                  <div class="card">
+                      <span class="badge">Dynamical Systems</span>
+                      <h3>Non-Linear Dynamics</h3>
+                      <p>Exploring bifurcations and differential equations to model biological  processes under Lotka-Volterra laws.</p>
+                  </div>
+              </div>
+          </section>
+          <section id="journey">
+              <h2>Academic Journey</h2>
+              <div class="timeline">
+                  <div class="timeline-item">
+                      <div class="timeline-date">2024 — Present</div>
+                      <div class="timeline-content">
+                          <h4>Graduate Researcher</h4>
+                          <p>Department of Decision Sciences, IIM Udaipur</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-date">2023 — 2024</div>
+                      <div class="timeline-content">
+                          <h4>Teaching Fellow / Assistant</h4>
+                          <p>Ashoka University (Probability, Statistical Inference) &  Economics.</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-date">2022 — 2023</div>
+                      <div class="timeline-content">
+                          <h4>BS-MS Degree</h4>
+                          <p>Mathematics & Statistics, IISER Kolkata (Minor in Computational &  Data Sciences).</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section id="toolkit">
+              <h2>Analytical Toolkit</h2>
+              <div class="toolkit-grid">
+                  <div class="toolkit-cat">
+                      <h4>Languages</h4>
+                      <ul class="toolkit-list">
+                          <li>Python (pandas, Sklearn, nltk)</li>
+                          <li>R</li>
+                          <li>Matlab</li>
+                      </ul>
+                  </div>
+                  <div class="toolkit-cat">
+                      <h4>Theoretical</h4>
+                      <ul class="toolkit-list">
+                          <li>Measure Theory</li>
+                          <li>Causal Inference</li>
+                          <li>Information Theory</li>
+                          <li>Probability Theory</li>
+                      </ul>
+                  </div>
+                  <div class="toolkit-cat">
+                      <h4>Systems</h4>
+                      <ul class="toolkit-list">
+                          <li>IBM watsonx AI</li>
+                          <li>Ollama / Local LLMs</li>
+                          <li>Tableau</li>
+                          <li>RAG / Quantization</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+          <section id="personal">
+              <h2>Beyond the Mathematics</h2>
+              <div class="grid">
+                  <div class="card">
+                      <h3>Interests</h3>
+                      <p>Developing local AI agents via MCP, experimenting with RAG pipelines,  and exploring the intersection of statistics and social good.</p>
+                  </div>
+                  <div class="card">
+                      <h3>Athletics</h3>
+                      <p>Competitive Cricket, Football, and Volleyball team player at IISER  Kolkata.</p>
+                  </div>
+              </div>
+          </section>
+      </div>
+      <footer>
+          &copy; <script>document.write(new Date().getFullYear())</script> Harsh Kumar. Built  by Hermes.
+      </footer>
+      <script>
+          // Stochastic Particle Background Simulation
+          const canvas = document.getElementById('canvas-bg');
+          const ctx = canvas.getContext('2d');
+          let particles = [];
+          function resize() {
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+          }
+          window.addEventListener('resize', resize);
+          resize();
+          class Particle {
+              constructor() {
+                  this.reset();
+              }
+              reset() {
+                  this.x = Math.random() * canvas.width;
+                  this.y = Math.random() * canvas.height;
+                  this.vx = (Math.random() - 0.5) * 0.5;
+                  this.vy = (Math.random() - 0.5) * 0.5;
+                  this.life = Math.random() * 100;
+              }
+              update() {
+                  this.x += this.vx;
+                  this.y += this.vy;
+                  this.life -= 0.1;
+                  if (this.life <= 0) this.reset();
+              }
+              draw() {
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, 1.5, 0, Math.PI * 2);
+                  ctx.fillStyle = '#4a90e2';
+                  ctx.fill();
+              }
+          }
+          for(let i = 0; i < 80; i++) particles.push(new Particle());
+          function animate() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              // Draw connections (The "Information Network")
+              ctx.strokeStyle = 'rgba(74, 144, 226, 0.1)';
+              ctx.lineWidth = 0.5;
+              for(let i = 0; i < particles.length; i++) {
+                  for(let j = i + 1; j < particles.length; j++) {
+                      let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y -  particles[j].y);
+                      if(dist < 150) {
+                          ctx.beginPath();
+                          ctx.moveTo(particles[i].x, particles[i].y);
+                          ctx.lineTo(particles[j].x, particles[j].y);
+                          ctx.stroke();
+                      }
+                  }
+              }
+              particles.forEach(p => {
+                  p.update();
+                  p.draw();
+              });
+              requestAnimationFrame(animate);
+          }
+          animate();
+      </script>
+  </body>
+  </html>
