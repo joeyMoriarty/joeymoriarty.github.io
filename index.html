@@ -1,20 +1,20 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Harsh Kumar | Research & Statistics</title>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfa  ir+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
-      <style>
-          :root {
-              --bg-color: #2e2a36; /* Soothing Deep Lavender */
-              --text-main: #ececec;
-              --text-muted: #b0b0b0;
-              --accent: #4a90e2;
-              --border: #403a4d;
-              --card-bg: rgba(45, 40, 55, 0.6);
-          }
-          * { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Kumar | Research & Statistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #2e2a36;
+            --text-main: #ececec;
+            --text-muted: #b0b0b0;
+            --accent: #4a90e2;
+            --border: #403a4d;
+            --card-bg: rgba(45, 40, 55, 0.6);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
           body {
               font-family: 'Inter', sans-serif;
               background-color: var(--bg-color);
@@ -29,20 +29,17 @@
               width: 100%;
               height: 100%;
               z-index: -1;
-              filter: opacity(0.5);
           }
           .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
           header {
-              height: 70vh; /* Reduced height to close gap to first section */
+              height: 60vh;
               display: flex;
-              flex-direction: column;
-              justify-content: center;
-              position: relative;
+              align-items: center;
           }
           .header-content {
               display: flex;
               justify-content: space-between;
-              align-items: flex-end;
+              align-items: center;
               width: 100%;
           }
           h1 {
@@ -62,9 +59,9 @@
           }
           .social-links {
               display: flex;
-              flex-direction: column;
-              align-items: flex-end;
-              gap: 10px;
+              flex-direction: row; /* Back to single row */
+              justify-content: flex-end;
+              gap: 20px;
           }
           .social-links a {
               text-decoration: none;
@@ -74,8 +71,26 @@
               border-bottom: 1px solid var(--border);
               transition: all 0.3s ease;
               padding-bottom: 2px;
+              white-space: nowrap;
           }
           .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+          /* New Landscape Image Section */
+          .hero-image-container {
+              width: 100%;
+              margin-bottom: 4rem;
+              border-radius: 8px;
+              overflow: hidden;
+              border: 1px solid var(--border);
+              background: var(--card-bg);
+          }
+          .hero-image {
+              width: 100%;
+              height: auto;
+              display: block;
+              filter: grayscale(20%);
+              transition: filter 0.5s ease;
+          }
+          .hero-image:hover { filter: grayscale(0%); }
           section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
           h2 {
               font-family: 'Playfair Display', serif;
@@ -83,7 +98,6 @@
               margin-bottom: 2rem;
               text-align: left;
           }
-          /* Full-width Research Sections */
           .interest-group { margin-bottom: 3rem; }
           .interest-category {
               font-family: 'Fira Code', monospace;
@@ -104,7 +118,6 @@
               transition: background 0.3s ease;
           }
           .project-card:hover { background: rgba(60, 55, 80, 0.8); }
-          /* Timeline */
           .timeline { position: relative; padding-left: 2rem; }
           .timeline::before {
               content: '';
@@ -129,7 +142,6 @@
           .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:  var(--accent); font-weight: 600; }
           .timeline-content h4 { font-size: 1.1rem; margin: 0.5rem 0; }
           .timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
-          /* Beyond Research - Fixed Alignment */
           .beyond-grid {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -165,7 +177,7 @@
           footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;  font-size: 0.8rem; color: #777; }
           @media (max-width: 768px) {
               .header-content { flex-direction: column; align-items: flex-start; gap: 2rem; }
-              .social-links { align-items: flex-start; }
+              .social-links { justify-content: flex-start; }
               h1 { font-size: 2.5rem; }
           }
       </style>
@@ -188,34 +200,36 @@
           </div>
       </header>
       <div class="container">
+          <!-- Image Placeholder Section -->
+          <div class="hero-image-container">
+              <!-- REPLACE 'images/hero-image.jpg' with your actual path or URL -->
+              <img  src="https://via.placeholder.com/1200x400?text=Your+Mathematical+Landscape+Here"  alt="Research Inspiration" class="hero-image">
+          </div>
           <section id="research">
               <h2>Research Interests</h2>
 
-              <!-- Quant Finance -->
               <div class="interest-group">
                   <div class="interest-category">Quantitative Finance</div>
                   <div class="project-card">
-                      Independent Component Analysis for Cryptocurrency Portfolio Optimization:   A fastICA, HSIC and Infomax Approach
+                      Strengthening ICA for Theoretical Independence of Time Series Signals with Applications in  Cryptocurrency Return and Portfolio Optimization.
                   </div>
                   <div class="project-card">
-                      On theoretical independence of time series signals with applications in  Cryptocurrency return and portfolio optimization.
+		      Independent Component Analysis for Cryptocurrency Portfolio Optimization:   A fastICA, HSIC and Infomax Approach.	
                   </div>
               </div>
-              <!-- Gen AI -->
               <div class="interest-group">
                   <div class="interest-category">Generative AI & LLMs</div>
                   <div class="project-card">
-                      Performance Enhancement and Comparative Analysis of Large Language  Modelsfor STEM Question Answering: A Study on Cloud (watsonx) vs. Local (Ollama)  Infrastructure and Fine-Tuning Methodologies.
+                      Applications of RAG based LLMs for STEM Question Answer Generation: A Study on Cloud (watsonx) vs. Local (Ollama) Infrastructure  and Fine-Tuning Methodologies.
                   </div>
               </div>
-              <!-- Econometrics -->
               <div class="interest-group">
                   <div class="interest-category">Econometrics</div>
                   <div class="project-card">
-                      Online Education on Individual Academic Performance: During the Pandemic  (InCIS 2025 and IMRC 2025 Conference Presentation)
+                      Online Education on Sort-Term and Long-Term Individual Academic and Career Performance: A PSM-DID approach, During the Pandemic  (InCIS 2025 and IMRC 2025 Conference Presentation)
                   </div>
                   <div class="project-card">
-                      Qualitative Response Model for Household Level Debt, for the Indian  Subcontinent
+                      Qualitative Response Model for Household Level Debt, for the Indian  Subcontinent using PCA based Probit Regression
                   </div>
               </div>
           </section>
