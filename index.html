@@ -1,264 +1,333 @@
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Harsh Kumar | Research & Statistics</title>
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfa      ir+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
-          <style>
-              :root {
-                  --bg-color: #121214; /* Darker, sophisticated background */
-                  --text-main: #ececec;
-                  --text-muted: #a0a0a0;
-                  --accent: #4a90e2;
-                  --border: #2a2a2e;
-                  --card-bg: rgba(30, 30, 35, 0.7);
-              }
-              * { box-sizing: border-box; margin: 0; padding: 0; }
-              body {
-                  font-family: 'Inter', sans-serif;
-                  background-color: var(--bg-color);
-                  color: var(--text-main);
-                  line-height: 1.6;
-                  overflow-x: hidden;
-              }
-              #canvas-bg {
-                  position: fixed;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  z-index: -1;
-                  filter: opacity(0.6);
-              }
-              .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-              header {
-                  height: 100vh;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  text-align: center;
-              }
-              h1 {
-                  font-family: 'Playfair Display', serif;
-                  font-size: 3.5rem;
-                  font-weight: 600;
-                  margin-bottom: 1rem;
-                  letter-spacing: -1px;
-              }
-              .tagline {
-                  font-size: 1.2rem;
-                  color: var(--text-muted);
-                  max-width: 600px;
-                  font-weight: 300;
-              }
-              .social-links {
-                  margin-top: 2rem;
-                  display: flex;
-                  gap: 20px;
-              }
-              .social-links a {
-                  text-decoration: none;
-                  color: var(--text-main);
-                  font-family: 'Fira Code', monospace;
-                  font-size: 0.9rem;
-                  border-bottom: 1px solid var(--border);
-                  transition: all 0.3s ease;
-                  padding-bottom: 2px;
-              }
-              .social-links a:hover { color: var(--accent); border-color: var(--accent); }
-              section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
-              h2 {
-                  font-family: 'Playfair Display', serif;
-                  font-size: 2rem;
-                  margin-bottom: 3rem;
-                  text-align: center;
-                  position: relative;
-              }
-              h2::after {
-                  content: '';
-                  display: block;
-                  width: 40px;
-                  height: 2px;
-                  background: var(--accent);
-                  margin: 15px auto;
-              }
-              .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));       gap: 2rem; }
-              .card {
-                  background: var(--card-bg);
-                  padding: 2rem;
-                  border: 1px solid var(--border);
-                  border-radius: 4px;
-                  transition: transform 0.3s ease, box-shadow 0.3s ease;
-                  backdrop-filter: blur(5px);
-              }
-              .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-              .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 1rem; font-size:       1.3rem; color: var(--text-main); }
-              .card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-              .timeline { position: relative; padding-left: 2rem; }
-              .timeline::before {
-                  content: '';
-                  position: absolute;
-                  left: 0;
-                  top: 0;
-                  bottom: 0;
-                  width: 2px;
-                  background: var(--border);
-              }
-              .timeline-item { position: relative; margin-bottom: 3rem; }
-              .timeline-item::before {
-                  content: '';
-                  position: absolute;
-                  left: -2.4rem;
-                  top: 0.5rem;
-                  width: 10px;
-                  height: 10px;
-                  background: var(--accent);
-                  border-radius: 50%;
-              }
-              .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:       var(--accent); font-weight: 600; }
-              .timeline-content h4 { font-size: 1.1rem; margin: 0.5rem 0; }
-              .timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
-              footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;       font-size: 0.8rem; color: #555; }
-              @media (max-width: 768px) {
-                  h1 { font-size: 2.5rem; }
-                  .container { padding: 0 1.5rem; }
-              }
-          </style>
-      </head>
-      <body>
-          <canvas id="canvas-bg"></canvas>
-          <header>
-              <div class="container">
-                  <h1>Harsh Kumar</h1>
-                  <p class="tagline">Graduate Researcher in Decision Sciences at IIM Udaipur</p>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Harsh Kumar | Research & Statistics</title>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfa  ir+Display:ital,wght@0,600;1,600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+      <style>
+          :root {
+              --bg-color: #2e2a36; /* Soothing Deep Lavender */
+              --text-main: #ececec;
+              --text-muted: #b0b0b0;
+              --accent: #4a90e2;
+              --border: #403a4d;
+              --card-bg: rgba(45, 40, 55, 0.6);
+          }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          body {
+              font-family: 'Inter', sans-serif;
+              background-color: var(--bg-color);
+              color: var(--text-main);
+              line-height: 1.6;
+              overflow-x: hidden;
+          }
+          #canvas-bg {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              filter: opacity(0.5);
+          }
+          .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+          header {
+              height: 70vh; /* Reduced height to close gap to first section */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              position: relative;
+          }
+          .header-content {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              width: 100%;
+          }
+          h1 {
+              font-family: 'Playfair Display', serif;
+              font-size: 3.5rem;
+              font-weight: 600;
+              margin-bottom: 0.5rem;
+              letter-spacing: -1px;
+              text-align: left;
+          }
+          .tagline {
+              font-size: 1.2rem;
+              color: var(--text-muted);
+              font-weight: 300;
+              text-align: left;
+              max-width: 600px;
+          }
+          .social-links {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              gap: 10px;
+          }
+          .social-links a {
+              text-decoration: none;
+              color: var(--text-main);
+              font-family: 'Fira Code', monospace;
+              font-size: 0.85rem;
+              border-bottom: 1px solid var(--border);
+              transition: all 0.3s ease;
+              padding-bottom: 2px;
+          }
+          .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+          section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+          h2 {
+              font-family: 'Playfair Display', serif;
+              font-size: 2rem;
+              margin-bottom: 2rem;
+              text-align: left;
+          }
+          /* Full-width Research Sections */
+          .interest-group { margin-bottom: 3rem; }
+          .interest-category {
+              font-family: 'Fira Code', monospace;
+              font-size: 1rem;
+              color: var(--accent);
+              margin-bottom: 1rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+          }
+          .project-card {
+              background: var(--card-bg);
+              padding: 1.5rem;
+              border: 1px solid var(--border);
+              border-radius: 4px;
+              margin-bottom: 0.8rem;
+              font-family: 'Inter', sans-serif;
+              font-size: 1.05rem;
+              transition: background 0.3s ease;
+          }
+          .project-card:hover { background: rgba(60, 55, 80, 0.8); }
+          /* Timeline */
+          .timeline { position: relative; padding-left: 2rem; }
+          .timeline::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              width: 2px;
+              background: var(--border);
+          }
+          .timeline-item { position: relative; margin-bottom: 3rem; }
+          .timeline-item::before {
+              content: '';
+              position: absolute;
+              left: -2.4rem;
+              top: 0.5rem;
+              width: 10px;
+              height: 10px;
+              background: var(--accent);
+              border-radius: 50%;
+          }
+          .timeline-date { font-family: 'Fira Code', monospace; font-size: 0.8rem; color:  var(--accent); font-weight: 600; }
+          .timeline-content h4 { font-size: 1.1rem; margin: 0.5rem 0; }
+          .timeline-content p { color: var(--text-muted); font-size: 0.9rem; }
+          /* Beyond Research - Fixed Alignment */
+          .beyond-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 2rem;
+              align-items: stretch;
+          }
+          .beyond-card {
+              background: var(--card-bg);
+              padding: 2rem;
+              border: 1px solid var(--border);
+              border-radius: 4px;
+              display: flex;
+              flex-direction: column;
+          }
+          .beyond-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 1.5rem;  color: var(--text-main); }
+          .beyond-list {
+              list-style: none;
+              padding: 0;
+              color: var(--text-muted);
+              font-size: 0.95rem;
+          }
+          .beyond-list li {
+              margin-bottom: 8px;
+              position: relative;
+              padding-left: 1.2rem;
+          }
+          .beyond-list li::before {
+              content: '•';
+              position: absolute;
+              left: 0;
+              color: var(--accent);
+          }
+          footer { text-align: center; padding: 4rem 0; font-family: 'Fira Code', monospace;  font-size: 0.8rem; color: #777; }
+          @media (max-width: 768px) {
+              .header-content { flex-direction: column; align-items: flex-start; gap: 2rem; }
+              .social-links { align-items: flex-start; }
+              h1 { font-size: 2.5rem; }
+          }
+      </style>
+  </head>
+  <body>
+      <canvas id="canvas-bg"></canvas>
+      <header>
+          <div class="container">
+              <div class="header-content">
+                  <div class="brand">
+                      <h1>Harsh Kumar</h1>
+                      <p class="tagline">Graduate Researcher in Decision Sciences at IIM  Udaipur</p>
+                  </div>
                   <div class="social-links">
                       <a href="https://github.com/joeyMoriarty" target="_blank">GitHub</a>
-                      <a href="https://www.linkedin.com/in/harsh-kumar-b19a72206/"       target="_blank">LinkedIn</a>
+                      <a href="https://www.linkedin.com/in/harsh-kumar-b19a72206/"  target="_blank">LinkedIn</a>
                       <a href="mailto:harsh.2024phd@iimu.ac.in">Email</a>
                   </div>
               </div>
-          </header>
-          <div class="container">
-              <section id="research">
-                  <h2>Research Interests</h2>
-                  <div class="grid">
-                      <div class="card">
-                          <h3>Independent Component Analysis for Cryptocurrency Portfolio       Optimization: A fastICA, HSIC and Infomax Approach</h3>
-                          <p>On theoretical independence of time series signals with applications       in Cryptocurrency return and portfolio optimization.</p>
-                      </div>
-                      <div class="card">
-                          <h3>Performance Enhancement and Comparative Analysis of Large Language       Models for STEM Question Answering</h3>
-                          <p>A Study on Cloud (watsonx) vs. Local (Ollama) Infrastructure and       Fine-Tuning Methodologies.</p>
-                      </div>
-                      <div class="card">
-                          <h3>Online Education on Individual Academic Performance: During the       Pandemic</h3>
-                          <p>Collaborative research with Prof. Samadrita Bhattacharyya, IIM       Udaipur. Presented at InCIS 2025 and IMRC 2025 Conferences.</p>
-                      </div>
-                  </div>
-              </section>
-              <section id="academics">
-                  <h2>Academics</h2>
-                  <div class="timeline">
-                      <div class="timeline-item">
-                          <div class="timeline-date">2024 — Present</div>
-                          <div class="timeline-content">
-                              <h4>Graduate Researcher</h4>
-                              <p>Department of Decision Sciences, IIM Udaipur</p>
-                          </div>
-                      </div>
-                      <div class="timeline-item">
-                          <div class="timeline-date">2023 — 2024</div>
-                          <div class="timeline-content">
-                              <h4>Teaching Fellow</h4>
-                              <p>Ashoka University (Statistical Inference, Probability Theory).</p>
-                          </div>
-                      </div>
-                      <div class="timeline-item">
-                          <div class="timeline-date">2018 — 2023</div>
-                          <div class="timeline-content">
-                              <h4>BS-MS Degree</h4>
-                              <p>Mathematics & Statistics, IISER Kolkata (Minor in Computational &       Data Sciences).</p>
-                          </div>
-                      </div>
-                  </div>
-              </section>
-              <section id="personal">
-                  <h2>Beyond Research</h2>
-                  <div class="grid">
-                      <div class="card">
-                          <h3>Sports</h3>
-                          <p>Cricket, Badminton, Football.</p>
-                      </div>
-                      <div class="card">
-                          <h3>Video Games</h3>
-                          <p>Elden Ring, Stardew Valley, Legend of Zelda: Breath of the Wild.</p>
-                      </div>
-                  </div>
-              </section>
           </div>
-          <footer>
-              &copy; <script>document.write(new Date().getFullYear())</script> Harsh Kumar. Built       by Hermes.
-          </footer>
-          <script>
-              const canvas = document.getElementById('canvas-bg');
-              const ctx = canvas.getContext('2d');
-              let particles = [];
-              function resize() {
-                  canvas.width = window.innerWidth;
-                  canvas.height = window.innerHeight;
-              }
-              window.addEventListener('resize', resize);
-              resize();
-              class Particle {
-                  constructor() {
-                      this.reset();
-                  }
-                  reset() {
-                      this.x = Math.random() * canvas.width;
-                      this.y = Math.random() * canvas.height;
-                      this.vx = (Math.random() - 0.5) * 0.4;
-                      this.vy = (Math.random() - 0.5) * 0.4;
-                      this.life = Math.random() * 100;
-                  }
-                  update() {
-                      this.x += this.vx;
-                      this.y += this.vy;
-                      this.life -= 0.1;
-                      if (this.life <= 0) this.reset();
-                  }
-                  draw() {
-                      ctx.beginPath();
-                      ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
-                      ctx.fillStyle = '#4a90e2';
-                      ctx.fill();
-                  }
-              }
-              for(let i = 0; i < 90; i++) particles.push(new Particle());
-              function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+      </header>
+      <div class="container">
+          <section id="research">
+              <h2>Research Interests</h2>
 
-            ctx.strokeStyle = 'rgba(74, 144, 226, 0.15)';
-            ctx.lineWidth = 0.7;
-            for(let i = 0; i < particles.length; i++) {
-                for(let j = i + 1; j < particles.length; j++) {
-                    let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
-                    if(dist < 160) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
-</body>
-</html>
+              <!-- Quant Finance -->
+              <div class="interest-group">
+                  <div class="interest-category">Quantitative Finance</div>
+                  <div class="project-card">
+                      Independent Component Analysis for Cryptocurrency Portfolio Optimization:   A fastICA, HSIC and Infomax Approach
+                  </div>
+                  <div class="project-card">
+                      On theoretical independence of time series signals with applications in  Cryptocurrency return and portfolio optimization.
+                  </div>
+              </div>
+              <!-- Gen AI -->
+              <div class="interest-group">
+                  <div class="interest-category">Generative AI & LLMs</div>
+                  <div class="project-card">
+                      Performance Enhancement and Comparative Analysis of Large Language  Modelsfor STEM Question Answering: A Study on Cloud (watsonx) vs. Local (Ollama)  Infrastructure and Fine-Tuning Methodologies.
+                  </div>
+              </div>
+              <!-- Econometrics -->
+              <div class="interest-group">
+                  <div class="interest-category">Econometrics</div>
+                  <div class="project-card">
+                      Online Education on Individual Academic Performance: During the Pandemic  (InCIS 2025 and IMRC 2025 Conference Presentation)
+                  </div>
+                  <div class="project-card">
+                      Qualitative Response Model for Household Level Debt, for the Indian  Subcontinent
+                  </div>
+              </div>
+          </section>
+          <section id="academics">
+              <h2>Academics</h2>
+              <div class="timeline">
+                  <div class="timeline-item">
+                      <div class="timeline-date">2024 — Present</div>
+                      <div class="timeline-content">
+                          <h4>Graduate Researcher</h4>
+                          <p>Department of Decision Sciences, IIM Udaipur</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-date">2023 — 2024</div>
+                      <div class="timeline-content">
+                          <h4>Teaching Fellow</h4>
+                          <p>Ashoka University (Statistical Inference, Probability Theory).</p>
+                      </div>
+                  </div>
+                  <div class="timeline-item">
+                      <div class="timeline-date">2018 — 2023</div>
+                      <div class="timeline-content">
+                          <h4>BS-MS Degree</h4>
+                          <p>Mathematics & Statistics, IISER Kolkata (Minor in Computational &  Data Sciences).</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section id="personal">
+              <h2>Beyond Research</h2>
+              <div class="beyond-grid">
+                  <div class="beyond-card">
+                      <h3>Sports</h3>
+                      <ul class="beyond-list">
+                          <li>Cricket</li>
+                          <li>Badminton</li>
+                          <li>Football</li>
+                      </ul>
+                  </div>
+                  <div class="beyond-card">
+                      <h3>Video Games</h3>
+                      <ul class="beyond-list">
+                          <li>Elden Ring</li>
+                          <li>Stardew Valley</li>
+                          <li>The Legend of Zelda: Breath of the Wild</li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+      </div>
+      <footer>
+          &copy; <script>document.write(new Date().getFullYear())</script> Harsh Kumar. Built  by Hermes.
+      </footer>
+      <script>
+          const canvas = document.getElementById('canvas-bg');
+          const ctx = canvas.getContext('2d');
+          let particles = [];
+          function resize() {
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+          }
+          window.addEventListener('resize', resize);
+          resize();
+          class Particle {
+              constructor() {
+                  this.reset();
+              }
+              reset() {
+                  this.x = Math.random() * canvas.width;
+                  this.y = Math.random() * canvas.height;
+                  this.vx = (Math.random() - 0.5) * 0.4;
+                  this.vy = (Math.random() - 0.5) * 0.4;
+                  this.life = Math.random() * 100;
+              }
+              update() {
+                  this.x += this.vx;
+                  this.y += this.vy;
+                  this.life -= 0.1;
+                  if (this.life <= 0) this.reset();
+              }
+              draw() {
+                  ctx.beginPath();
+                  ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
+                  ctx.fillStyle = '#4a90e2';
+                  ctx.fill();
+              }
+          }
+          for(let i = 0; i < 90; i++) particles.push(new Particle());
+          function animate() {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              ctx.strokeStyle = 'rgba(74, 144, 226, 0.15)';
+              ctx.lineWidth = 0.7;
+              for(let i = 0; i < particles.length; i++) {
+                  for(let j = i + 1; j < particles.length; j++) {
+                      let dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y -  particles[j].y);
+                      if(dist < 160) {
+                          ctx.beginPath();
+                          ctx.moveTo(particles[i].x, particles[i].y);
+                          ctx.lineTo(particles[j].x, particles[j].y);
+                          ctx.stroke();
+                      }
+                  }
+              }
+              particles.forEach(p => {
+                  p.update();
+                  p.draw();
+              });
+              requestAnimationFrame(animate);
+          }
+          animate();
+      </script>
+  </body>
+  </html>
